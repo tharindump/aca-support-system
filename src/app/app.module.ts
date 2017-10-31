@@ -29,6 +29,7 @@ import { FindLecturersService } from './find-lecturers/find-lecturers.service';
 import { StudentComponent } from './student/student.component';
 import { TimeTableComponent } from './time-table/time-table.component';
 import { StudentService } from './student/student.service';
+import { TimeTableService } from './time-table/time-table.service';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { StudentService } from './student/student.service';
   providers: [
     FindLecturersService,
     StudentService,
+    TimeTableService,
   ],
   bootstrap: [AppComponent]
 })

@@ -1,3 +1,20 @@
-<p>
-  time-table works!
-</p>
+<mat-card>
+
+  <form [formGroup]="subjectAllocForm">
+    <mat-form-field>
+      <mat-select [(ngModel)]="selectedSubject" placeholder="Select Subject" formControlName="selectedSubject" name="selectedSubject">
+        <mat-option *ngFor="let subject of subjectsList" [value]="subject">{{subject}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="No. of students" formControlName="noOfStudents" type="number" required/>
+    </mat-form-field>
+    <button mat-raised-button color="accent" (click)="generateTimeSlot()">Generate Time Slot</button>
+  </form>
+
+</mat-card>
+
+<mat-card class="time-table-result">
+  <pre>{{subjectAllocForm.value | json}}</pre>
+</mat-card>
