@@ -24,11 +24,15 @@ import { AppComponent } from './app.component';
 import { FindLecturersComponent } from './find-lecturers/find-lecturers.component';
 import { APP_ROUTES } from './app.routes';
 import { FindLecturersService } from './find-lecturers/find-lecturers.service';
+import { StudentComponent } from './student/student.component';
+import { TimeTableComponent } from './time-table/time-table.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FindLecturersComponent,
+    StudentComponent,
+    TimeTableComponent,
   ],
   imports: [
     BrowserModule,
