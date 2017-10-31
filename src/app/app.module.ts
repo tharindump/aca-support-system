@@ -7,16 +7,18 @@ import {
   MatSidenavModule,
   MatIconModule,
   MatFormFieldModule,
+  MatInputModule,
   MatSelectModule,
   MatOptionModule,
   MatListModule,
   MatButtonModule,
   MatButtonToggleModule,
   MatTableModule,
+  MatGridListModule,
   MatProgressBarModule,
 } from '@angular/material';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
 
@@ -26,6 +28,7 @@ import { APP_ROUTES } from './app.routes';
 import { FindLecturersService } from './find-lecturers/find-lecturers.service';
 import { StudentComponent } from './student/student.component';
 import { TimeTableComponent } from './time-table/time-table.component';
+import { StudentService } from './student/student.service';
 
 @NgModule({
   declarations: [
@@ -37,6 +40,7 @@ import { TimeTableComponent } from './time-table/time-table.component';
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     HttpModule,
     MatButtonModule,
@@ -48,14 +52,17 @@ import { TimeTableComponent } from './time-table/time-table.component';
     MatSidenavModule,
     MatListModule,
     MatFormFieldModule,
+    MatInputModule,
     MatSelectModule,
     MatOptionModule,
     MatTableModule,
+    MatGridListModule,
     MatProgressBarModule,
     RouterModule.forRoot(APP_ROUTES)
   ],
   providers: [
-    FindLecturersService
+    FindLecturersService,
+    StudentService,
   ],
   bootstrap: [AppComponent]
 })

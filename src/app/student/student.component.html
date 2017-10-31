@@ -1,3 +1,21 @@
-<p>
-  student works!
-</p>
+<mat-card>
+  <form [formGroup]="studentForm">
+    <mat-form-field>
+      <input matInput placeholder="Index No." formControlName="indexNo" pattern="[0-9]{6}[a-zA-Z]" required/>
+    </mat-form-field>
+    <button mat-raised-button color="accent" (click)="calculateGPA()">Calculate GPA</button>
+  </form>
+</mat-card>
+
+<mat-card class="student-result" *ngIf="studentGpa">
+  <mat-grid-list cols="12" rowHeight="50px">
+      <mat-grid-tile [colspan]="3">
+          <p>Total GPA: {{studentGpa.gpa}}</p>
+        </mat-grid-tile>
+    <mat-grid-tile [colspan]="1">0.0</mat-grid-tile>
+    <mat-grid-tile [colspan]="4">
+      <mat-progress-bar [color]="accent" mode="determinate" [value]="(studentGpa.gpa/4.2)*100"></mat-progress-bar>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1">4.2</mat-grid-tile>
+  </mat-grid-list>
+</mat-card>

@@ -8,7 +8,7 @@ import {jsonHeader} from '../shared/xhrheaders';
 @Injectable()
 export class FindLecturersService {
 
-  private url = 'http://localhost:5000/api/get_lecturers';
+  private url = 'http://localhost:5000/api/get-lecturers';
 
   constructor(private http: Http) { }
 

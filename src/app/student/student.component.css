@@ -1,0 +1,15 @@
+form mat-form-field {
+    margin: 0px 15px;
+}
+
+.student-result {
+    margin: 10px 0px;
+}
+
+mat-progress-bar {
+    height: 20px;
+}
+
+.mat-progress-bar-fill::after {
+    background-color: #FA6500;
+}

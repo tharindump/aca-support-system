@@ -6,11 +6,11 @@
       </mat-select>
     </mat-form-field>
     <mat-form-field>
-      <mat-select [disabled]="!selectedLevel" [(ngModel)]="selectedCourse" placeholder="Select Subject" name="subject">
+      <mat-select  color="accent" [disabled]="!selectedLevel" [(ngModel)]="selectedCourse" placeholder="Select Subject" name="subject">
         <mat-option *ngFor="let course of coursesList" [value]="course">{{course}}</mat-option>
       </mat-select>
     </mat-form-field>
-    <button mat-raised-button color="primary" (click)="findLecturers()" [disabled]="!selectedCourse">Find Lecturers</button>
+    <button mat-raised-button color="accent" (click)="findLecturers()" [disabled]="!selectedCourse">Find Lecturers</button>
 
     <mat-progress-bar mode="indeterminate" *ngIf="isCompleted"></mat-progress-bar>
     
