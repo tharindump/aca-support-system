@@ -1,0 +1,38 @@
+<mat-card class="subject-form">
+  <form>
+    <mat-form-field>
+      <mat-select [(ngModel)]="selectedLevel" placeholder="Select Level" name="level" (change)="onLevelChange($event)">
+        <mat-option *ngFor="let level of levels" [value]="level">{{level}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select [disabled]="!selectedLevel" [(ngModel)]="selectedCourse" placeholder="Select Subject" name="subject">
+        <mat-option *ngFor="let course of coursesList" [value]="course">{{course}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="findLecturers()" [disabled]="!selectedCourse">Find Lecturers</button>
+
+    <mat-progress-bar mode="indeterminate" *ngIf="isCompleted"></mat-progress-bar>
+    
+  </form>
+</mat-card>
+
+<mat-card class="lecturer-result">
+  
+  <mat-table #table [dataSource]="dataSource">
+
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="url">
+      <mat-header-cell *matHeaderCellDef> URL </mat-header-cell>
+      <mat-cell *matCellDef="let element"><a href="{{element.url}}"> {{element.url}} </a></mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+
+</mat-card>

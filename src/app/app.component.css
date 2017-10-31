@@ -1,0 +1,22 @@
+.sidenav {
+    width: 200px;
+    box-shadow: 1px 1px 5px 1px #aaa;
+}
+
+.sidenav-container {
+    height: 90vh;
+}
+
+mat-sidenav mat-button-toggle {
+    width: 100%;
+}
+
+.sidenav-link span {
+    padding: 5px;
+    font-size: 15px;
+}
+
+.content {
+    padding: 5px;
+    margin-left: 5px;
+}
