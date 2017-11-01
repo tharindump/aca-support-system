@@ -2,7 +2,7 @@
 
   <form [formGroup]="subjectAllocForm">
     <mat-form-field>
-      <mat-select [(ngModel)]="selectedSubject" placeholder="Select Subject" formControlName="selectedSubject" name="selectedSubject">
+      <mat-select placeholder="Select Subject" formControlName="selectedSubject" name="selectedSubject">
         <mat-option *ngFor="let subject of subjectsList" [value]="subject">{{subject}}</mat-option>
       </mat-select>
     </mat-form-field>
@@ -16,5 +16,29 @@
 </mat-card>
 
 <mat-card class="time-table-result">
-  <pre>{{subjectAllocForm.value | json}}</pre>
+
+  <mat-table #table [dataSource]="dataSource">
+
+    <ng-container matColumnDef="roomID">
+      <mat-header-cell *matHeaderCellDef> Room ID </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.roomID}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="timeSlotID">
+      <mat-header-cell *matHeaderCellDef> Time Slot ID </mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.timeSlotID}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="status">
+      <mat-header-cell *matHeaderCellDef> Availability </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <mat-icon *ngIf="element.status">done</mat-icon>
+        <mat-icon *ngIf="!element.status">highlight_off</mat-icon>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+
 </mat-card>
