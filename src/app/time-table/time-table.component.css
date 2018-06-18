@@ -2,6 +2,65 @@ mat-form-field {
     margin: 0px 15px;
 }
 
-.time-table-result {
-    margin: 10px 0px;
+.time-table-card {
+    margin: 5px 0px;
+}
+
+.preferences-list-items {
+    height: 35px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.column-3 {
+    float: left;
+    width: 33.3%;
+}
+
+.h4-title {
+    margin: 2px;
+}
+
+.split-group {
+    margin-top: 18px;
+    margin-left: 10px;
+}
+
+mat-radio-button {
+    margin-right: 12px;
+}
+
+.groups-field {
+    margin: 0 !important;
+}
+
+.group-input {
+    margin-top: 10px;
+}
+
+#timetable {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#timetable td, #timetable th {
+    border: 1px solid #ddd;
+    padding: 15px 8px;
+}
+
+#timetable tr:nth-child(even){background-color: #f2f2f2;}
+
+#timetable tr:hover {background-color: #ddd;}
+
+#timetable th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: rgb(36, 24, 68);
+    color: white;
 }

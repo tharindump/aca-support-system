@@ -16,6 +16,8 @@ import {
   MatTableModule,
   MatGridListModule,
   MatProgressBarModule,
+  MatCheckboxModule,
+  MatRadioModule,
 } from '@angular/material';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -24,12 +26,15 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { FindLecturersComponent } from './find-lecturers/find-lecturers.component';
-import { APP_ROUTES } from './app.routes';
+import { AppRouting } from './app.routes';
 import { FindLecturersService } from './find-lecturers/find-lecturers.service';
 import { StudentComponent } from './student/student.component';
 import { TimeTableComponent } from './time-table/time-table.component';
 import { StudentService } from './student/student.service';
 import { TimeTableService } from './time-table/time-table.service';
+import { StudentResultsPredictionComponent } from './student-results-prediction/student-results-prediction.component';
+import { StudentCarrerGuidanceComponent } from './student-carrer-guidance/student-carrer-guidance.component';
+import { CurriculumModule } from './curriculum/curriculum.module';
 
 @NgModule({
   declarations: [
@@ -37,6 +42,8 @@ import { TimeTableService } from './time-table/time-table.service';
     FindLecturersComponent,
     StudentComponent,
     TimeTableComponent,
+    StudentResultsPredictionComponent,
+    StudentCarrerGuidanceComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,7 +66,10 @@ import { TimeTableService } from './time-table/time-table.service';
     MatTableModule,
     MatGridListModule,
     MatProgressBarModule,
-    RouterModule.forRoot(APP_ROUTES)
+    MatCheckboxModule,
+    MatRadioModule,
+    CurriculumModule,
+    AppRouting
   ],
   providers: [
     FindLecturersService,

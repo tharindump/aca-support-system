@@ -13,3 +13,33 @@ mat-progress-bar {
 .mat-progress-bar-fill::after {
     background-color: #FA6500;
 }
+
+a:link, a:visited {
+    background-color: #4a6abe;
+    color: white;
+    padding: 50px;
+    text-align: center; 
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+}
+
+a:hover, a:active {
+    background-color: #232247;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}

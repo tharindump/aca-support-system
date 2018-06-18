@@ -1,0 +1,145 @@
+{
+ "data":[
+ 		{"numberOfStudents":250,
+		"subject":"IN1400",
+		"subjectname":"",
+		"type":"lecture",
+		"subjtype":"compulsory",
+		"duration":2,
+		"lecturer":"Lecturer10",
+ 		"times":"Morning",
+ 		"days":["Wednesday","Thursday"]
+ 		},
+ 		{"numberOfStudents":250,
+		"subject":"IN1400-LAB",
+		"subjectname":"",
+		"type":"lab",
+		"subjtype":"compulsory",
+		"duration":3,
+		"lecturer":"Instructer1",
+ 		"times":"evening",
+ 		"days":["Monday","Wednesday","Thursday"]
+ 		},
+
+		{"numberOfStudents":150,
+		"subject":"IN1500",
+		"subjectname":"",
+		"type":"lecture",
+		"subjtype":"compulsory",
+		"duration":2,
+		"lecturer":"Lecturer13",
+		"times":"Morning",
+ 		"days":["Monday","Wednesday"]
+		},
+		
+		{"numberOfStudents":150,
+		"subject":"IN1500-Tute",
+		"subjectname":"",
+		"type":"tute",
+		"subjtype":"compulsory",
+		"duration":2,
+		"lecturer":"Instructor2",
+		"times":"Morning",
+ 		"days":["Tuesday","Friday"]
+		},
+
+		{"numberOfStudents":150,
+		"subject":"IN1610",
+		"subjectname":"",
+		"type":"lecture",
+		"subjtype":"compulsory",
+		"duration":2,
+		"lecturer":"Lecturer14",
+		"times":"Morning",
+ 		"days":["Monday","Thursay"]
+		},
+		
+		{"numberOfStudents":150,
+		"subject":"IN1610-LAB",
+		"subjectname":"",
+		"type":"lab",
+		"subjtype":"compulsory",
+		"duration":3,
+		"lecturer":"Instructer1",
+		"times":"Evening",
+ 		"days":["Monday","Friday","Tuesday"]
+		},
+		
+		{"numberOfStudents":150,
+		"subject":"IN1620",
+		"subjectname":"",
+		"type":"lecture",
+		"subjtype":"compulsory",
+		"duration":2,
+		"lecturer":"Lecturer3",
+		"times":"Morning",
+ 		"days":["Monday","Tuesday","Wednesday"]
+		},
+		
+		{"numberOfStudents":150,
+		"subject":"IN1620-LAB",
+		"subjectname":"",
+		"type":"lab",
+		"subjtype":"compulsory",
+		"duration":3,
+		"lecturer":"Instructer1",
+		"times":"Evening",
+ 		"days":["Monday","Tuesday","Wednesday"]
+		},
+
+		{"numberOfStudents":250,
+		"subject":"IN1900",
+		"subjectname":"",
+		"type":"lecture",
+		"subjtype":"compulsory",
+		"duration":2,
+		"lecturer":"Lecturer15",
+		"times":"Morning",
+ 		"days":["Monday","Tuesday"]
+		},
+		
+		{"numberOfStudents":250,
+		"subject":"IN1900-LAB",
+		"subjectname":"",
+		"type":"lab",
+		"subjtype":"compulsory",
+		"duration":3,
+		"lecturer":"Instructer3",
+		"times":"Any",
+ 		"days":["Monday","Friday"]
+		},
+
+		{"numberOfStudents":250,
+		"subject":"IS1020",
+		"subjectname":"",
+		"type":"lecture",
+		"subjtype":"compulsory",
+		"duration":2,
+		"lecturer":"Lecturer16",
+		"times":"Any",
+ 		"days":["Tuesday","Wednesday"]
+		},
+
+		{"numberOfStudents":250,
+		"subject":"IS1210",
+		"subjectname":"",
+		"type":"lecture",
+		"subjtype":"elective",
+		"duration":2,
+		"lecturer":"Lecturer17",
+		"times":"Morning",
+ 		"days":["Monday","Friday"]
+		},
+
+		{"numberOfStudents":150,
+		"subject":"IS1030",
+		"subjectname":"",
+		"type":"lecture",
+		"subjtype":"elective",
+		"duration":2,
+		"lecturer":"Lecturer18",
+		"times":"Morning",
+ 		"days":["Tuesday","Thursday"]
+		}
+	]
+}

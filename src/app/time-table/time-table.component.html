@@ -1,44 +1,91 @@
-<mat-card>
+<form>
+  <mat-card class="time-table-card">
+    <div class="">
+      <mat-form-field>
+        <input matInput [(ngModel)]="semester" name="semester" placeholder="Level" required/>
+      </mat-form-field>
+      <button mat-raised-button color="accent" (click)="getSemesterJSONData()">Get Time Table</button>
+    </div>
+  </mat-card>
+</form>
 
-  <form [formGroup]="subjectAllocForm">
-    <mat-form-field>
-      <mat-select placeholder="Select Subject" formControlName="selectedSubject" name="selectedSubject">
-        <mat-option *ngFor="let subject of subjectsList" [value]="subject">{{subject}}</mat-option>
-      </mat-select>
-    </mat-form-field>
-
-    <mat-form-field>
-      <input matInput placeholder="No. of students" formControlName="noOfStudents" type="number" required/>
-    </mat-form-field>
-    <button mat-raised-button color="accent" (click)="generateTimeSlot()">Generate Time Slot</button>
-  </form>
-
-</mat-card>
-
-<mat-card class="time-table-result">
-
+<mat-card class="time-table-card" *ngIf="dataSource">
+  <button mat-raised-button color="primary" (click)="generateTimeTable()">Generate Time Table</button>
   <mat-table #table [dataSource]="dataSource">
 
-    <ng-container matColumnDef="roomID">
-      <mat-header-cell *matHeaderCellDef> Room ID </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.roomID}} </mat-cell>
+    <ng-container matColumnDef="noOfStudents">
+      <mat-header-cell *matHeaderCellDef> No. of Students </mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.numberOfStudents}}</mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="timeSlotID">
-      <mat-header-cell *matHeaderCellDef> Time Slot ID </mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.timeSlotID}}</mat-cell>
+    <ng-container matColumnDef="subjtype">
+      <mat-header-cell *matHeaderCellDef> Subject Type </mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.subjtype}}</mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="status">
-      <mat-header-cell *matHeaderCellDef> Availability </mat-header-cell>
-      <mat-cell *matCellDef="let element">
-        <mat-icon *ngIf="element.status">done</mat-icon>
-        <mat-icon *ngIf="!element.status">highlight_off</mat-icon>
-      </mat-cell>
+    <ng-container matColumnDef="type">
+      <mat-header-cell *matHeaderCellDef> Type </mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.type}}</mat-cell>
     </ng-container>
+
+    <ng-container matColumnDef="time">
+      <mat-header-cell *matHeaderCellDef> Time </mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.times}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="days">
+      <mat-header-cell *matHeaderCellDef> Days </mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.days}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="subject">
+      <mat-header-cell *matHeaderCellDef> Subject </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.subject}} </mat-cell>
+    </ng-container>
+
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
   </mat-table>
 
+</mat-card>
+
+<mat-card class="timetable-output" *ngIf="viewTimeTable">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <table class="timetable" id="timetable">
+    <thead>
+      <tr>
+        <th></th>
+        <th>
+          <span class="long">Monday</span>
+        </th>
+        <th>
+          <span class="long">Tuesday</span>
+        </th>
+        <th>
+          <span class="long">Wendsday</span>
+        </th>
+        <th>
+          <span class="long">Thursday</span>
+        </th>
+        <th>
+          <span class="long">Friday</span>
+        </th>
+        <th>
+          <span class="long">Saturday</span>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let timeslot of timeslotsDisplay">
+        <td>{{timeslot}}</td>
+        <td>{{tableData.monday[timeslot]}}</td>
+        <td>{{tableData.tuesday[timeslot]}}</td>
+        <td>{{tableData.wednesday[timeslot]}}</td>
+        <td>{{tableData.thursday[timeslot]}}</td>
+        <td>{{tableData.friday[timeslot]}}</td>
+        <td>{{tableData.saturday[timeslot]}}</td>
+      </tr>
+    </tbody>
+  </table>
 </mat-card>

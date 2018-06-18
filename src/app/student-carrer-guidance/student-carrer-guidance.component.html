@@ -1,0 +1,15 @@
+<div class="content">
+  <div class="flex-container">
+    <div>
+      <div class="index">
+        <input [(ngModel)]="indexNo" type="text" placeholder="Enter Your Index No:" />
+      </div>
+      <div class="button">
+        <button (click)="getCareerPath()">Get Career Path</button>
+      </div>
+    </div>
+  </div>
+  <div class="result">
+    <p>Predicted Career Path: <span>{{predictedPath}}</span></p>
+  </div>
+</div>

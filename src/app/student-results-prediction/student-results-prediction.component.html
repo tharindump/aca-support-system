@@ -1,0 +1,37 @@
+<div class="content">
+  <div class="flex-container">
+    <form class="subject-selection flex-container">
+      <div class="row">
+        <div class="index">
+          <input [(ngModel)]="indexNo" type="text" placeholder="Enter Your Index No:" name="indexNo" />
+        </div>
+        <div class="">
+          <select class="subject-select" [(ngModel)]="selectedSubject" name="selectedSubject">
+            <option disabled selected>Select A Subject</option>
+            <option *ngFor="let item of subjects" [value]="item">{{item}}</option>
+          </select>
+        </div>
+        <div class="button">
+          <button (click)="getPredictedResult()">Predict Result</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <mat-card>
+
+    <h2>Predicted result</h2>
+
+    <table>
+      <tr>
+        <th>Subject</th>
+        <th>Result</th>
+      </tr>
+      <tr>
+        <td>{{selectedSubject}}</td>
+        <td>{{predictedResult}}</td>
+      </tr>
+    </table>
+  </mat-card>
+
+</div>
